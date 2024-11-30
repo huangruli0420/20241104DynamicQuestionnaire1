@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+canvas {
+  width: 100% !important;  // 讓 canvas 寬度自動調整
+  height: 100% !important; // 讓 canvas 高度自動調整
+  max-width: 400px; // 設定最大寬度
+  max-height: 400px; // 設定最大高度
+}
+
+.chartSmallDiv {
+  // border: 1px solid black;
+  width: 90%;
+  height: 30%;
+  display: flex;
+  margin-top: 2%;
+  margin-left: 5%;
+}
+
+.piechart {
+  border: 1px solid black;
+  width: 70%;
+  height: 70%;
+  margin-right: 15%;
+}
+
+.chartText{
+  // border: 1px solid black;
+  width:50% ;
+  height:auto ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

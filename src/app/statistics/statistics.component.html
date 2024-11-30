@@ -1,0 +1,30 @@
+<div class="wrapper">
+
+  <!-- 右上問卷時間、問券題目、問券敘述 -->
+  <div class="timeDiv">
+    <div>
+      <h4>{{questData.sDate}}-</h4>
+    </div>
+    <div>
+      <h4>{{questData.eDate}}</h4>
+    </div>
+  </div>
+
+  <div class="title">
+    <h1>{{questData.questName}}</h1>
+  </div>
+
+  <!-- 返回list的按鈕 -->
+    @if(this.isAdminMode){
+    <button class="button2" routerLink="/admin-list"> 返回 </button>
+    } @else {
+      <button class="button2" routerLink="/list"> 返回 </button>
+    }
+  <!-- 統計圖表 -->
+  <div class="chartWrapper">
+    @for(data of questData.questionDataArray; track $index){
+    <app-chart [eachQuestionData]="data"></app-chart>
+    }
+  </div>
+
+</div>

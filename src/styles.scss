@@ -1,0 +1,43 @@
+body {
+  overflow-x: hidden;
+  background-color: #e6f2ff;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+/* 選取 checkbox 框架（在未選取狀態） */
+::ng-deep .checkboxHeader .mat-checkbox .mat-checkbox-frame {
+  border-color: white !important; /* 設定未選取時的框架顏色 */
+}
+
+/* 設定背景顏色為透明，以免有預設陰影或背景色影響 */
+::ng-deep .checkboxHeader .mat-checkbox .mat-checkbox-background {
+  background-color: transparent !important;
+}
+
+/* 確保 checkbox 在 hover 時依然是白色框 */
+::ng-deep .checkboxHeader .mat-checkbox:not(.mat-checkbox-checked):hover .mat-checkbox-frame {
+  border-color: white !important;
+}
+
+.KingPenguin{
+  z-index: -1;
+  position: fixed;
+  left:88%;
+  top:75%
+}
+
+.BlueWhale{
+  z-index: -1;
+  position: fixed;
+  right: 83%;
+  top:10%;
+  transform: rotate(-60deg);
+}

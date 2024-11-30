@@ -1,0 +1,27 @@
+<div class="wrapper">
+
+  <!-- 輸入要新增的問卷名稱、敘述、開始時間、結束時間 -->
+  <div class="inputWrapper">
+    <h4>問卷名稱:</h4>
+    <input type="text" [(ngModel)]="addQuestionnaireName">
+  </div>
+  <div class="inputWrapper">
+    <h4>問卷說明:</h4>
+    <textarea type="text" [(ngModel)]="addQuestionnaireDcp" class="questionDcp"></textarea>
+  </div>
+  <div class="inputWrapper">
+    <h4>開始時間:</h4>
+    <input type="date" [min]="startMinDate" [(ngModel)]="addQuestionnaireStartTime" (change)="startMinDateChange()">
+  </div>
+  <div class="inputWrapper">
+    <h4>結束時間:</h4>
+    <input type="date" [min]="endMinDate" [(ngModel)]="addQuestionnaireEndTime" [disabled]="!addQuestionnaireStartTime">
+  </div>
+
+  <!-- 取消和繼續按鈕 -->
+  <div class="buttonDiv">
+    <button class="button1" (click)="clearNewQuestionData()"> 取消 </button>
+    <button class="button2" (click)="saveNewQuestionData()"> 下頁 </button>
+  </div>
+
+</div>

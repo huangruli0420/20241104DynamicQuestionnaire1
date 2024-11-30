@@ -1,0 +1,30 @@
+<!-- 若非文字題則都用圓餅圖來顯示 -->
+
+@if(eachQuestionData.type != "T"){
+<div class="chartSmallDiv">
+
+  <div class="piechart">
+    <canvas id="{{eachQuestionData.id}}"></canvas>
+  </div>
+
+  <div class="chartText">
+    <h2>{{eachQuestionData.id}}.{{eachQuestionData.name}}</h2>
+    @for(option of eachQuestionData.labels; let i = $index; track $index ){
+    <h3>{{option}}</h3>
+    }
+  </div>
+
+</div>
+} @else {
+<!-- 文字題 -->
+<div class="chartSmallDiv">
+  <div class="chartText">
+    <h2>{{eachQuestionData.id}}.{{eachQuestionData.name}}</h2>
+    <br>
+    @for(answer of eachQuestionData.data; let i = $index; track $index){
+    <h3>{{answer}}</h3>
+    <br>
+    }
+  </div>
+</div>
+}

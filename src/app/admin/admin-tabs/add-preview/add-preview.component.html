@@ -1,0 +1,49 @@
+<div class="wrapper">
+
+  <!-- 右上要新增的問卷時間 -->
+  <div class="timeDiv">
+    <div>
+      <h4>{{newQuestionnaireObject.startDate}}-</h4>
+    </div>
+    <div>
+      <h4>{{newQuestionnaireObject.endDate}}</h4>
+    </div>
+  </div>
+
+  <!-- 要新增的問券名稱、問券敘述 -->
+  <div class="title">
+    <h1>{{newQuestionnaireObject.name}}</h1>
+  </div>
+
+  <div class="description">
+    <h4>{{newQuestionnaireObject.description}}</h4>
+  </div>
+
+  <!-- 要新增的所有問題  -->
+  <!-- this.savedQuestionArray.push(
+      { name: this.addQuestionName, options: this.addOptionArray, type: this.type, need: this.needCheckbox }
+    ); -->
+  @for (question of newQuestionnaireObject.quesList;let i = $index ;track $index) {
+  <div class="questionWrapper">
+    <h4>{{i+1}}:@if(question.required){<span style="color: red;">*</span>}{{question.quesName}}</h4>
+    @if(question.type !== 'T'){
+      <ul>
+        @for (option of question.options; let j = $index; track $index) {
+        <li>{{option.option}}</li>
+        }
+      </ul>
+    }
+    @if(question.type ==='T'){
+      <h4>文字敘述題</h4>
+    }
+  </div>
+  }
+
+
+  <!-- 右下角返回與送出的按鈕的DIV -->
+  <div class="buttonDiv">
+    <button class="button1" (click)="goAddOption()"> 上頁 </button>
+    <button class="button2" (click)="goBackAdminList()"> 送出 </button>
+  </div>
+
+</div>

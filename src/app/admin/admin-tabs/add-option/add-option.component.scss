@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #001a33;
+}
+
+.wrapper {
+  // border:1px solid black ;
+  background-color: #f0f8ff;
+  border-radius: 5%;
+  // box-shadow: 3px 3px 3px #003366;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+// 頁面內容 ==================================================================================================================
+.newQuestionNameWrapper {
+  // border:1px solid black ;
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5%;
+}
+
+// select
+select {
+  height: 30px;
+}
+
+.labelWrapper {
+  // border:1px solid black ;
+  width: 45%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  text-align: left;
+
+  .textInput {
+    width: 80%
+  }
+}
+
+.addOptionWrapper {
+  // border:1px solid black ;
+  width: 80%;
+  height: auto;
+  margin-top: 5%;
+}
+
+// 包住新增和移除的按鈕的div ====================================================================================================
+.addRmButtonDiv {
+  // border:1px solid black ;
+  width: 100%;
+  height: 5%;
+  display: flex;
+
+  button {
+    margin-right: 5%;
+  }
+}
+
+// 按鈕CSS
+.button1 {
+  border-radius: 10%;
+  background-color: white;
+  color: #003366;
+}
+
+.button2 {
+  border-radius: 10%;
+  background-color: #003366;
+  color: white;
+}
+
+// // 預覽新增選項的區域
+// .optionDiv{
+//   border:1px solid black ;
+// }
+
+// 儲存問題按鈕 ===============================================================================================================
+.saveQuestionButtonDiv {
+  // border:1px solid black ;
+  width: 100%;
+  height: 5%;
+  margin-top: 5%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+// 最下方顯示有多少問題的Table =================================================================================================
+
+// 刪除和編輯 ICON
+.iconDiv {
+  // border:1px solid black ;
+  width: 80%;
+  height: 5%;
+  margin-top: 5%;
+
+  mat-icon {
+    margin-right: 7%;
+  }
+}
+
+.iconDiv :hover {
+  cursor: pointer;
+}
+
+// 顯示問題的Table
+.optionTableWrapper {
+  border: 1px solid #003366;
+  width: 80%;
+  height: auto;
+}
+
+table {
+  border-collapse: collapse; //或改成seperate
+  // border-spacing: 10px; /* 單元格間距，只有當  border-collapse:為seperate才有效*/
+  width: 100%;
+  /* 表格寬度占滿父容器 */
+}
+
+thead {
+  background-color: #003366;
+}
+
+thead th {
+  color: white;
+  padding: 10px 15px;
+  /* 單元格內間距 */
+  text-align: left;
+  /* 左對齊 */
+  vertical-align: middle;
+  /* 垂直居中 */
+  border: 1px solid #ddd;
+  /* 邊框 */
+  font-weight: bold;
+  /* 加粗文字 */
+}
+
+td {
+  text-align: center;
+  /* 文字居中 */
+}
+
+// 上一步和預覽頁 ===============================================================================================================
+.goBackGoNextbuttonDiv {
+  // border:1px solid black ;
+  width: 80%;
+  height: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: flex-end;
+
+  .button1 {
+    margin-right: 5%;
+  }
+}

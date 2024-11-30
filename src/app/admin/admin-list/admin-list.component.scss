@@ -1,0 +1,142 @@
+*{
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #001a33  ;
+}
+
+// 網頁
+.wrapper{
+  position: relative;
+  display: flex ;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+// 登入按鈕
+.button2{
+  border-radius: 10%;
+  background-color:#003366 ;
+  color: white;
+  position: absolute;
+  top: 1vh;
+  right: 10vw;
+  z-index: 5;
+}
+
+// 搜尋區塊
+.inputWrapper{
+  // border:1px solid black;
+  width: 100%;
+  height: auto;
+}
+
+// 搜尋按鈕
+.searchButton{
+  border-radius: 10%;
+  background-color:#003366 ;
+  color: white;
+  margin-left: 6px;
+}
+
+.searchInput{
+  width:25%;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.dateInput{
+  width:20%;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.searchWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: self-start;
+  padding: 25px;
+  width: 80%;
+  height: 150px;
+  border: 2px #003366 solid;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px #003366;
+  margin-top: 7%;
+}
+
+// icon
+.iconDiv{
+  // border: 1px solid black;
+  width: 80%;
+  height: 5%;
+  margin-top: 3.5%;
+  mat-icon {
+    cursor: pointer;
+    margin-left: 2%;
+  }
+
+}
+
+.tableWrapper{
+  width:80%
+}
+表單區塊
+
+table {
+  width: 100%;
+}
+
+.tableDiv{
+  width: 80%;
+  box-shadow: 3px 3px 3px #003366;
+  border: 2px black solid;
+  border-radius: 5px;
+}
+
+/* 基數列背景變色 */
+// 選擇位於 tableDiv區塊內，並且是基數(odd)位置的表格行(<tr>)
+.tableDiv tr:nth-child(odd){
+  background-color: #f0f8ff;
+}
+
+/* 滑鼠懸停浮起放大效果 */
+// 選擇位於 tableDiv 區塊內的表格行(tr)，當滑鼠移到行上時應用樣式
+// :not(:first-child)使得狀態列和資料第一列的頁面都無效果，而:not(.tableHeader)和:not(.tableHeader)~tr:hover還是會讓所有列都有效果
+// .tableDiv tr:hover{
+//   transform: scale(1.01);
+//   // X軸和Y軸偏移輛、陰影模糊半徑和陰影顏色
+//   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+//   // 設定滑鼠移入和移出時的過度效果，使用 ease 曲線使放大和陰影的效果為平滑過渡
+//   transition: transform 0.5s ease, box-shadow 0.5s ease;
+// }
+
+/* 禁止狀態列的 hover 效果，但保留 checkbox 的互動性 */
+.tableDiv th.mat-header-cell {
+  pointer-events: auto; /* 保證 checkbox 能正常互動 */
+  background-color: inherit; /* 確保 hover 背景不會改變 */
+  transition: none !important; /* 禁止表頭單元格的 transition，避免 hover 效果 */
+}
+
+
+// .tableDiv mat-header-row:hover {
+//   transform: none !important; /* 禁用浮起效果 */
+//   box-shadow: none !important; /* 禁用浮起效果的陰影 */
+// }
+
+.tableHeader{
+  background-color:#003366 !important;
+  color:white;
+  // checkbox{
+  //   border-color: white !important;
+  //   background-color: transparent !important;
+  //   }
+}
+
+// 這列會跟checkbox打架，因此直接讓所有的動畫都失效
+/* 設定狀態列 th(應該是Angular寫法) 的 hover 無效 ，自己摸索出來的*/
+// .tableDiv th {
+//   pointer-events: none; /* 禁止狀態列被 hover */
+// }

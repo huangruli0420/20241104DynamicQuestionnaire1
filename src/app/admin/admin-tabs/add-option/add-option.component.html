@@ -1,0 +1,100 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- 讓ICON正確顯示 -->
+
+<div class="wrapper">
+
+  <div class="newQuestionNameWrapper">
+    <select [(ngModel)]="type" (change)="changeSelect()">
+      <option value="single">單選</option>
+      <option value="multi">多選</option>
+      <option value="text">文字</option>
+    </select>
+
+    <div class="labelWrapper">
+      <h4>問題:</h4>
+      <input type="text" class="textInput" [(ngModel)]="quesName">
+    </div>
+
+    <div class="labelWrapper">
+      <h4>是否必填:</h4>
+      <input type="checkbox" [(ngModel)]="required">
+    </div>
+  </div>
+
+  <div class="addOptionWrapper">
+    @if(type !== 'text'){
+    <div class="addRmButtonDiv">
+      <button class="button2" (click)="addOption()">增加選項</button>
+      <button class="button1" (click)="removeOption()">移除選項</button>
+    </div>
+    <br>
+      @for(option of this.addOptionArray;let i = $index; track $index){
+      <div class="optionDiv">
+        <h4>選項{{option.optionNumber}}:</h4>
+        <input type="text" [(ngModel)]="option.option">
+      </div>
+      }
+    }
+    <div class="saveQuestionButtonDiv">
+      @if(isEditing){<button class="button2" (click)="saveSelectedQuestion()"> 儲存問題</button>}
+      @else{<button class="button2" (click)="saveQuestion()"> 新增問題</button>}
+    </div>
+  </div>
+
+<!-- 刪除所選TABLE裡的問題，還有編輯所選問題的按鈕 -->
+<div class="iconDiv">
+  @if(!isEditing){
+  <mat-icon aria-hidden="false" fontIcon="delete" (click)="deleteSelectedQuestion()">delete</mat-icon>
+  <mat-icon aria-hidden="false" fontIcon="edit" (click)="editSelectedQuestion()">edit</mat-icon>}
+</div>
+<!-- 顯示目前已新增了哪些問題的TABLE -->
+  <div class="optionTableWrapper">
+    <table>
+
+      <thead >
+        <tr>
+          <th></th>
+          <th>#</th>
+          <th>問題名稱</th>
+          <th>選項</th>
+          <th>類型</th>
+          <th>是否必填</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for(question of this.savedQuestionArray; let i = $index; track $index){
+          <tr>
+            <td><input type="checkbox" [(ngModel)]="question.selected"></td>
+            <td>{{i+1}}</td>
+            <td>{{question.quesName}}</td>
+            <td>
+              @if(question.type !=='text'){
+                <ul>
+                  @for(option of question.options;track $index){
+                    <li>{{option.option}}</li>}
+                </ul>
+              }
+            </td>
+            <td>
+              <span>
+                @if (question.type === "single"){單選}
+                @if (question.type === "multi"){多選}
+                @if (question.type === "text"){文字}
+              </span>
+            </td>
+            <td>{{ question.required ? '是' : '否' }}</td>
+          </tr>
+        }
+      </tbody>
+
+    </table>
+  </div>
+
+    <!-- 上一步和下一步 -->
+    <div class="goBackGoNextbuttonDiv">
+      <button class="button1" (click)="goAddQuestion()"> 上頁 </button>
+      <button class="button2" (click)="goAddPreview()"> 預覽 </button>
+    </div>
+
+</div>

@@ -1,0 +1,30 @@
+<!-- 返回admin-list的按鈕 -->
+<!-- <button class="button2" routerLink="/admin-list"> 返回 </button> -->
+
+<div class="wrapper">
+  <div class="tabsWrapper">
+
+    <!-- 頁籤
+    mat-tab-nav-bar：這是一個 Angular Material 提供的導航頁籤容器，用來包含頁籤連結 (mat-tab-link) 元素。
+    [tabPanel]="tabPanel"：綁定到下方的 <mat-tab-nav-panel #tabPanel>，將這個導航欄位指定為這些頁籤連結的面板。
+    (click)="activeLink = link.name"：當頁籤被點擊時，將頁籤名稱 (link.name) 存入 activeLink 變數，標記為"當前選中"。
+    [routerLink]="[link.path]"：指定每個頁籤連結的路由路徑，點擊時會觸發路由變更，顯示對應的內容。
+    [active]="activeLink == link.name"：設定當前頁籤的樣式。如果 activeLink 與 link.name 相等，則表示該頁籤被選中，會呈現"激活"樣式。-->
+
+    <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+      @for (link of links; track link) {
+      <a mat-tab-link
+      (click)="activeLink = link.name"
+      [routerLink]="[link.path]"
+      [active]="activeLink == link.name">
+      <!-- 頁籤顯示的名稱為links裡面每一個物件的name -->
+        {{link.name}} </a>
+      }
+    </nav>
+    <!-- 頁籤下的router-outlet -->
+    <mat-tab-nav-panel #tabPanel>
+      <router-outlet class="router-outlet"></router-outlet>
+    </mat-tab-nav-panel>
+
+  </div>
+</div>

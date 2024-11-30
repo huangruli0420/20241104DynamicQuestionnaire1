@@ -1,0 +1,56 @@
+*{
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #003366;
+}
+
+.wrapper{
+  // border: 1px solid black;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeDiv{
+  border: 1px solid black;
+  width: 10%;
+  height: 5%;
+  display: flex;
+  position: absolute;
+  left: 70%;
+}
+
+.button2{
+  border-radius: 10%;
+  background-color:#003366 ;
+  font-size: 20px;
+  color: white;
+  width: 5%;
+  height: 5%;
+  position: absolute;
+  right: 75%;
+  margin-top: 3%;
+}
+
+.title{
+  // border: 1px solid black;
+  width: 20%;
+  height: 5%;
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 所有圖表與文字敘述題外層的DIV
+.chartWrapper{
+  // border: 1px solid black;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+}
+
